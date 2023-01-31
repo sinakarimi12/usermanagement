@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get Product List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.getJSON("http://localhost:8081/products", function (result) {
+                $.each(result, function (key,value) {
+                    $("#myproducts").append(value.id+ "   "+ value.name+ "  ")
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="myproducts"></div> <br>
+</body>
+</html>
